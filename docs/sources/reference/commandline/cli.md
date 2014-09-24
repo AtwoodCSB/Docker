@@ -116,7 +116,7 @@ you can also specify individual sockets too `docker -d -H fd://3`. If the
 specified socket activated files aren't found then docker will exit. You
 can find examples of using systemd socket activation with docker and
 systemd in the [docker source tree](
-https://github.com/docker/docker/blob/master/contrib/init/systemd/socket-activation/).
+https://github.com/docker/docker/tree/master/contrib/init/systemd/).
 
 Docker supports softlinks for the Docker data directory
 (`/var/lib/docker`) and for `/var/lib/docker/tmp`. The `DOCKER_TMPDIR` and the data directory can be set like this:
@@ -142,10 +142,10 @@ container at the same time - screen sharing style, or quickly view the
 progress of your daemonized process.
 
 You can detach from the container again (and leave it running) with
-`CTRL-C` (for a quiet exit) or `CTRL-\`
-to get a stacktrace of the Docker client when it quits. When
-you detach from the container's process the exit code will be returned
-to the client.
+`CTRL-p CTRL-q` (for a quiet exit), or `CTRL-c`  which will send a
+SIGKILL to the container, or `CTRL-\` to get a stacktrace of the
+Docker client when it quits. When you detach from the container's 
+process the exit code will be returned to the client.
 
 To stop a container, use `docker stop`.
 
